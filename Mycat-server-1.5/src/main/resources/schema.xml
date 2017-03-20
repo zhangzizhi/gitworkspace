@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://org.opencloudb/">
+	<schema name="mycat" checkSQLschema="false">
+		<table name="cmp_tsalsale" primaryKey="TSALSALEID" dataNode="dn1,dn2" rule="sharding-by-pattern-vipcardno"/>
+		<table name="cmp_tsalsalepay" primaryKey="TSALSALEPAYID" dataNode="dn1,dn2" rule="sharding-by-pattern-orgcodesaleno"/>
+		<table name="cmp_tsalsaleplu"  primaryKey="TSALSALEPLUID" dataNode="dn1,dn2" rule="sharding-by-pattern-orgcodesaleno"/>
+		<table name="cmp_tsalsalepludsc" primaryKey="TSALSALEPLUDSCID" dataNode="dn1,dn2" rule="sharding-by-pattern-orgcodesaleno"/>
+		<table name="crm_accountform" dataNode="dn1"/>
+		<table name="crm_appadvertimages" dataNode="dn1"/>
+		<table name="crm_appadvertimagesdetail" dataNode="dn1"/>		
+		<table name="crm_applogoimages" dataNode="dn1"/>
+		<table name="crm_applogoimagesdetail" dataNode="dn1"/>
+		<table name="crm_appointmentcard" primaryKey="appointmentCardID" dataNode="dn1,dn2" rule="sharding-by-string-wctaccountid"/>
+		<table name="crm_appcarddetail" primaryKey="appCarddetID" dataNode="dn1,dn2" rule="sharding-by-string-wctaccountid"/>	
+		<table name="crm_business" primaryKey="BUID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_businesspayinfo" dataNode="dn1"/>
+		<table name="crm_businlogin" dataNode="dn1"/>
+		<table name="crm_carbrand" primaryKey="CarBrandID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_cardbind" primaryKey="CARDBINDID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_cardcompinfor" dataNode="dn1"/>
+		<table name="crm_cardcustinfo" primaryKey="CARDCUSTID" dataNode="dn1,dn2" rule="sharding-by-pattern-compno"/>
+		<table name="crm_cardinfor" dataNode="dn1"/>
+		<table name="crm_cardpsninfor" dataNode="dn1"/>
+		<table name="crm_cardtype" primaryKey="CARDTYPEID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_coupon" dataNode="dn1"/>
+		<table name="crm_custfeedback" primaryKey="FEEDBACKID" dataNode="dn1,dn2" rule="sharding-by-string-feedbackid"/>
+		<table name="crm_custinvoice" primaryKey="CUSTINVID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_customerreviews" dataNode="dn1"/>
+		<table name="crm_customerreviewsrule" dataNode="dn1"/>
+		<table name="crm_custtype" dataNode="dn1"/>
+		<table name="crm_custtypeuser" dataNode="dn1"/>
+		<table name="crm_deliverycompany" dataNode="dn1"/>
+		<table name="crm_gas" primaryKey="GASID" dataNode="dn1,dn2" rule="sharding-by-pattern-compno"/>
+		<table name="crm_gas_mid" dataNode="dn1"/>
+		<table name="crm_giveprize" dataNode="dn1"/>
+		<table name="crm_innermem" dataNode="dn1"/>
+		<table name="crm_limitpay" dataNode="dn1"/>
+		<table name="crm_memberconsume" dataNode="dn1"/>
+		<table name="crm_memberdetail" primaryKey="MEMDETID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_memberscore" dataNode="dn1"/>
+		<table name="crm_memcard" primaryKey="MCARDID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_memgiveprize" primaryKey="MEMGIVEPRIZEID" dataNode="dn1,dn2" rule="sharding-by-string-swtid"/>
+		<table name="crm_memlevel" primaryKey="MLEVELID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_memmessage" dataNode="dn1"/>
+		<table name="crm_memprom" dataNode="dn1"/>
+		<table name="crm_menlevelcls" dataNode="dn1"/>
+		<table name="crm_msginfo" dataNode="dn1"/>
+		<table name="crm_news" dataNode="dn1"/>
+		<table name="crm_oilcardinfo" primaryKey="OILCARDID" dataNode="dn1,dn2" rule="sharding-by-pattern-cardno"/>
+		<table name="crm_oilprice" dataNode="dn1"/>
+		<table name="crm_player" dataNode="dn1"/>
+		<table name="crm_present" primaryKey="PRESENTID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_presentpackage" primaryKey="PRESENTPACKAGEID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_prize" dataNode="dn1"/>
+		<table name="crm_prizecardpwd" primaryKey="PCARDPWDID" dataNode="dn1,dn2" rule="sharding-by-string-swtid"/>
+		<table name="crm_prizepool" primaryKey="PRIZEPOOLID" dataNode="dn1,dn2" rule="sharding-by-string-swtid"/>
+		<table name="crm_prizeratio" dataNode="dn1"/>
+		<table name="crm_ranking_his" dataNode="dn1"/>
+		<table name="crm_recharge" primaryKey="RECHARGEID" dataNode="dn1,dn2" rule="sharding-by-pattern-compno"/>
+		<table name="crm_recharge_mid" dataNode="dn1"/>
+		<table name="crm_reviewreply" dataNode="dn1"/>
+		<table name="crm_reviewrule" dataNode="dn1"/>
+		<table name="crm_reviewruledetail" dataNode="dn1"/>
+		<table name="crm_reviewsrulestn" dataNode="dn1"/>
+		<table name="crm_selfratio" dataNode="dn1"/>
+		<table name="crm_selfratio_his" dataNode="dn1"/>
+		<table name="crm_selftitle" dataNode="dn1"/>
+		<table name="crm_sendemail" primaryKey="CARDBINDID" dataNode="dn1,dn2" rule="sharding-by-string-cardbindid"/>
+		<table name="crm_sweepslog" primaryKey="SWEEPSLOGID" dataNode="dn1,dn2" rule="sharding-by-string-sweepslogid"/>
+		<table name="crm_sweepstakes" primaryKey="CarBrandID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_sweepstakeslog" primaryKey="SWTID" dataNode="dn1,dn2" rule="sharding-by-string-sptid"/>
+		<table name="crm_swtcondition"  primaryKey="CONDITIONID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_swtluckdraw" primaryKey="SWTLUCKDRAWID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_swtmemtype" dataNode="dn1"/>
+		<table name="crm_swtoil" dataNode="dn1"/>
+		<table name="crm_swtorg" dataNode="dn1"/>
+		<table name="crm_swtstn" dataNode="dn1"/>
+		<table name="crm_taxiwinrecord" dataNode="dn1"/>
+		<table name="crm_taxiwinrecord_his" dataNode="dn1"/>
+		<table name="crm_temp" dataNode="dn1"/>
+		<table name="crm_tenaswttype" primaryKey="TENASWTTYPEID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_travelrecord" dataNode="dn1"/>
+		<table name="crm_usercar" primaryKey="CARID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_usercoupon" dataNode="dn1"/>
+		<table name="crm_userdelivery" primaryKey="DELIVERYID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_welcomeinfo" dataNode="dn1"/>
+		<table name="crm_winprize" dataNode="dn1"/>
+		<table name="crm_wxprize" dataNode="dn1"/>
+		<table name="crm_wxprize_his" primaryKey="WXPRIZEHISID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_wxprize_overdue" primaryKey="WXPRIZEOVERDUEID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="fuel_customer" dataNode="dn1"/>
+		<table name="jc_bukrscfg" dataNode="dn1"/>
+		<table name="jc_logconfigofmoduleinfo" dataNode="dn1"/>
+		<table name="jc_syscfg" dataNode="dn1"/>
+		<table name="mob_message_memberinfo" dataNode="dn1"/>
+		<table name="mob_messagesinfo" dataNode="dn1"/>
+		<table name="mob_tprocertiinfo" primaryKey="MESSAGEID" dataNode="dn1,dn2" rule="sharding-by-string-tenantid"/>
+		<table name="mob_tprojszqresult" dataNode="dn1"/>
+		<table name="mq_config" dataNode="dn1"/>
+		<table name="mq_queue" dataNode="dn1"/>
+		<table name="mq_queuedata" dataNode="dn1"/>
+		<table name="sequence" dataNode="dn1"/>
+		<table name="tbl_appexceptionlog" dataNode="dn1"/>
+		<table name="tbl_businessinfo" primaryKey="BUSIID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_dataactiveinfo" primaryKey="ACTIVEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_dataattr" primaryKey="ATTRID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_dataimpcodecheck" dataNode="dn1"/>
+		<table name="tbl_dataimpcol" dataNode="dn1"/>
+		<table name="tbl_dataimptab" dataNode="dn1"/>
+		<table name="tbl_dataitemsinfo" primaryKey="DATAITEMID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_dataobjactinfo" primaryKey="OBJACTID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_dataobjattr" primaryKey="DATAOBJATTRID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_dataobjinfo" primaryKey="DATAOBJID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_datavalue" primaryKey="VALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_equiperrlog" primaryKey="EQUIPERRLOGID" dataNode="dn1,dn2" rule="sharding-by-string-equiperrlogid"/>
+		<table name="tbl_exceltemplate" dataNode="dn1"/>
+		<table name="tbl_groupinfo" primaryKey="GROUPID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_grouprolesinfo" primaryKey="GROUPROLESID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_groupuser" primaryKey="GROUPUSERID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_hsfexceptionlog" primaryKey="hsfLogId" dataNode="dn1,dn2" rule="sharding-by-string-hsflogid"/>
+		<table name="tbl_impexecl" dataNode="dn1"/>
+		<table name="tbl_infomanage" dataNode="dn1"/>
+		<table name="tbl_jfcchartinfo" dataNode="dn1"/>
+		<table name="tbl_jobparaminfo" dataNode="dn1"/>
+		<table name="tbl_menuobjinfo" primaryKey="MENUOBJID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_menusinfo" primaryKey="MENUID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_mobileaccount" primaryKey="MOBILEACCOUNTID" dataNode="dn1,dn2" rule="sharding-by-pattern-mobilephone"/>
+		<table name="tbl_orgattrinfo" primaryKey="ORGATTRID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_orgattrrangevalue" primaryKey="ATTRRANGEVALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_orgattrvalue"  primaryKey="ATTRVALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_orgbusiinfo" primaryKey="ORGBUSIID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_orginfo" primaryKey="ORGID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_orglevtypeinfo" primaryKey="ORGLEVTYPEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_orgtypeinfo" primaryKey="ORGTYPEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_orgversion" primaryKey="ORGVERID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_paraminfo" primaryKey="PARAMID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_paramrangeinfo"  primaryKey="PARAMRANGEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_paramtenainfo" primaryKey="PARAMTENAID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_paramvalueinfo" primaryKey="PARAMVALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_passwordhistory" dataNode="dn1"/>
+		<table name="tbl_quartzjob" dataNode="dn1"/>
+		<table name="tbl_quartzjobtenant" dataNode="dn1"/>
+		<table name="tbl_rightsforrolesinfo" primaryKey="RIGHTROLEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_roledataobjinfo" primaryKey="ROLEDATAOBJID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_roleinfo" primaryKey="ROLEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_roleobjactinfo" primaryKey="ROLEOBJACTID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_smsplatform" dataNode="dn1"/>
+		<table name="tbl_stnattrinfo" primaryKey="STNATTRID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_stnattrrangevalue" primaryKey="STNATTRRANGEVALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_stnattrvalue" primaryKey="STNATTRVALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_stninfo" primaryKey="STNID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_stnorginfo" primaryKey="STNORGID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_systemdatainfo" primaryKey="SYSDATAID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_tenaemail" primaryKey="TENAEMAILID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_tenantinfo" primaryKey="TENANTID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_tenantmenuinfo" primaryKey="TENANTMENUID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_tenaorgatrrinfo" primaryKey="TENAORGATTRID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_tenaorglevinfo" primaryKey="TENAORGLEVID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_tenaorgtypeinfo" primaryKey="TENAORGTYPEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_useractinfo"  primaryKey="USERACTID" dataNode="dn1,dn2" rule="sharding-by-string-useractid"/>
+		<table name="tbl_userattrinfo" primaryKey="USERATTRID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_userattrrangevalue" primaryKey="USERATTRRANGEVALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_userattrvalue" primaryKey="USERATTRVALUEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_userequipchangeinfo" primaryKey="USEREQUIPCHANGEID" dataNode="dn1,dn2" rule="sharding-by-string-userequipchangeid"/>
+		<table name="tbl_userinfo" primaryKey="USERID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="tbl_userlogininfo" primaryKey="USERLOGINID" dataNode="dn1,dn2" rule="sharding-by-string-userloginid"/>
+		<table name="tbl_usermessage"  primaryKey="MSGID" dataNode="dn1,dn2" rule="sharding-by-pattern-mobilephone"/>
+		<table name="tbl_userorginfo" primaryKey="USERORGID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_userrolesinfo" primaryKey="USERROLEID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_usertrailposition" primaryKey="USERTRAILPOSITIONID" dataNode="dn1,dn2" rule="sharding-by-string-usertrailpositionid"/>
+		<table name="uic_area"  primaryKey="areaId" type="global" dataNode="dn1,dn2"/>
+		<table name="uic_country" primaryKey="countryId" type="global" dataNode="dn1,dn2"/>
+		<table name="wct_answer" dataNode="dn1"/>
+		<table name="wct_appinfo" dataNode="dn1"/>
+		<table name="wct_apppic" dataNode="dn1"/>
+		<table name="wct_custmanager" dataNode="dn1"/>
+		<table name="wct_empower" dataNode="dn1"/>
+		<table name="wct_fansuser" dataNode="dn1"/>
+		<table name="wct_fansuserdetail" dataNode="dn1"/>
+		<table name="wct_firstreply" dataNode="dn1"/>
+		<table name="wct_interactivelog" primaryKey="INTERACTIVELOGID" dataNode="dn1,dn2" rule="sharding-by-string-wctaccountid"/>
+		<table name="wct_keyword" dataNode="dn1"/>
+		<table name="wct_levelinfo" dataNode="dn1"/>
+		<table name="wct_prize_his"  primaryKey="PRIZEHISID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="wct_prize_overdue" primaryKey="PRIZEOVERDUEID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="wct_prizestore" primaryKey="PRIZESTOREID" dataNode="dn1,dn2" rule="sharding-by-string-swtid"/>
+		<table name="wct_pubaccount" dataNode="dn1"/>
+		<table name="wct_question" dataNode="dn1"/>
+		<table name="wct_redpacketstore" dataNode="dn1"/>
+		<table name="wct_redpacketwinner" dataNode="dn1"/>
+		<table name="wct_survey" dataNode="dn1"/>
+		<table name="wct_tenaappinfo" dataNode="dn1"/>
+		<table name="wct_tenantpayinfo" dataNode="dn1"/>
+		<table name="wct_useraccbinding" primaryKey="UACCBINDINGID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="wct_useranswer" primaryKey="ANSWERID" dataNode="dn1,dn2" rule="sharding-by-string-wctaccountid"/>
+		<table name="wct_userlevel" dataNode="dn1"/>
+		<table name="wct_userrecharge" dataNode="dn1"/>
+		<table name="wct_template" dataNode="dn1"/>
+		<table name="wct_templatedetail" dataNode="dn1"/>
+		<table name="tbl_usermobchangelog" primaryKey="USERMOBCHANGEID" dataNode="dn1,dn2" rule="sharding-by-string-usermobchangeid"/>
+		<table name="V_STNATTR" dataNode="dn1"/>
+		<table name="tbl_dataarch" dataNode="dn1"/>
+		<table name="tbl_dataarchdetail" dataNode="dn1"/>
+		<table name="crm_advertType" dataNode="dn1"/>
+		<table name="crm_businServiceClass" dataNode="dn1"/>
+		<table name="crm_businServicePrice" dataNode="dn1"/>
+		<table name="CMP_TORGMANAGE" dataNode="dn1"/>
+		<table name="crm_greetCard" dataNode="dn1"/>
+		<table name="crm_greetCardRead" dataNode="dn1"/>
+		<table name="crm_consumeCoupons" primaryKey="CONSUMECOUPONSID" dataNode="dn1,dn2" rule="sharding-by-string-consumecouponsid"/>	
+		<table name="crm_TenaTemplateType" primaryKey="TENATEMPLATETYPEID" type="global" dataNode="dn1,dn2"/>	
+		<table name="JC_LOGCONFIGOFDATASOURCE" dataNode="dn1"/>
+		<table name="crm_BonusPoint" primaryKey="BONUSPOINTID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_BonusPointOrg" primaryKey="BONUSPOINTORGID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_BonusPointStn" primaryKey="BONUSPOINTSTNID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_bonusPointOil" primaryKey="BONUSPOINTOILID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_otherBonusPoint" primaryKey="OTHERBONUSPOINTID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_BonusPointMemLevel" primaryKey="BONUSPOINTMEMLEVELID" type="global" dataNode="dn1,dn2"/>
+		<table name="CRM_CONSUMECOUPONSRULE" primaryKey="CUSTOMERREVIEWSRULEID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_upAndDownGrade" primaryKey="UPANDDOWNGRADEID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_upAndDownGradeDetail" primaryKey="UPANDDOWNGRADEDETAILID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_tenaproductcls" primaryKey="TENAPRODUCTCLSID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_swtproductcls" primaryKey="SWTPRODUCTCLSID" type="global" dataNode="dn1,dn2"/>
+		<table name="crm_friendPraise" primaryKey="FRIENDPRAISEID"  dataNode="dn1,dn2" rule="sharding-by-string-wctaccountid"/>
+		<table name="crm_friendPraiseDetail" primaryKey="FRIENDPRAISEDETAILID" dataNode="dn1,dn2" rule="sharding-by-string-wctaccountid"/>
+		<table name="crm_businCoupon" primaryKey="BUSINCOUPONID" dataNode="dn1,dn2" rule="sharding-by-pattern-bucode"/>
+		<table name="crm_swtcreditlist" dataNode="dn1"/>
+		<table name="crm_swtcardno" dataNode="dn1"/>
+		<table name="crm_swtcusttype" dataNode="dn1"/>
+		<table name="crm_comcustomerauth" primaryKey="COMCUSTOMERAUTHID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_comcardbind" primaryKey="COMCARDBINDID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_comseccardbindauth" primaryKey="COMSECCARDBINDAUTHID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_carrestr" dataNode="dn1"/>
+		<table name="crm_carrestrdetail" dataNode="dn1"/>
+		<table name="crm_carrestrholiday" dataNode="dn1"/>
+		<table name="tbl_longshort" primaryKey="LONGSHORTID" type="global" dataNode="dn1,dn2"/>
+		<table name="tbl_accesspolicy" primaryKey="ACCESSPOLICYID" type="global" dataNode="dn1,dn2"/>
+        <table name="tbl_tenaaccesspolicy" primaryKey="TENAACCESSPOLICYID" type="global" dataNode="dn1,dn2"/>
+		<table name="analys_activecardmember" dataNode="dn1"/>
+		<table name="crm_signgift" primaryKey="SIGNGIFTID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="crm_signgiftdetail" primaryKey="SIGNGIFTDETAILID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+        <table name="tbl_passwordpolicy" primaryKey="PASSWORDPOLICYID" type="global" dataNode="dn1,dn2"/>
+        <table name="wct_qrcodecontrast" dataNode="dn1"/>
+        <table name="crm_swtpics" primaryKey="SWTPICSID" type="global" dataNode="dn1,dn2"/>
+        <table name="wct_prizestore_mycat" primaryKey="PRIZESTOREID" dataNode="dn1,dn2" rule="sharding-by-string-swtid"/>
+		<table name="crm_fieldltheinfo" dataNode="dn1"/>
+		<table name="crm_groupfinfo" dataNode="dn1"/>
+		<table name="crm_grelfinfo" dataNode="dn1"/>
+		<table name="crm_message" dataNode="dn1"/>
+		<table name="crm_sendmessage" dataNode="dn1"/>
+		<table name="crm_messageread" primaryKey="MESSAGEREADID" dataNode="dn1,dn2" rule="sharding-by-string-userid"/>
+		<table name="wct_giftclass" dataNode="dn1"/>
+		<table name="wct_giftexchange" dataNode="dn1"/>
+		<table name="oilwls_price" dataNode="dn1"/>
+		<table name="oilwls_order" dataNode="dn1"/>
+		<table name="oilwls_orderdetail" dataNode="dn1"/>
+		<table name="oilwls_sendway" dataNode="dn1"/>
+	</schema>
+	<dataNode name="dn1" dataHost="localhost1" database="school" />
+	<dataNode name="dn2" dataHost="localhost2" database="school" />
+	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<writeHost host="hostM1" url="192.168.159.131:3306" user="mycat"
+				   password="123456">
+			<readHost host="hostS1" url="192.168.159.132:3306" user="mycatr" password="123456" />
+		</writeHost>
+	</dataHost>
+	<dataHost name="localhost2" maxCon="1000" minCon="10" balance="0"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<writeHost host="hostM2" url="192.168.159.133:3306" user="mycat"
+				   password="123456">
+			<readHost host="hostS2" url="192.168.159.134:3306" user="mycatr" password="123456" />
+		</writeHost>
+	</dataHost>
+	<!-- <dataNode name="dn1" dataHost="ncmihost1" database="shouji"/>
+	<dataNode name="dn2" dataHost="ncmihost2" database="shouji2"/>
+	<dataHost name="ncmihost1" maxCon="1000" minCon="10" balance="1" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		can have multi write hosts
+		<writeHost host="hostM1" url="rdsc68q5iip6n5cwry8m6.mysql.rds.aliyuncs.com:3306" user="shouji" password="shouji">
+			can have multi read hosts
+			<readHost host="hostS1" url="rdsv0b72x3zskf8436he.mysql.rds.aliyuncs.com:3306" user="shouji" password="shouji"/>
+		</writeHost>			
+	</dataHost>	
+	<dataHost name="ncmihost2" maxCon="1000" minCon="10" balance="1" writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>	
+		<writeHost host="hostM1" url="rds8n77p6r67g6txk060.mysql.rds.aliyuncs.com:3306" user="shouji2" password="shouji2">
+			can have multi read hosts
+			<readHost host="hostS1" url="rds1j425eadxy54091de.mysql.rds.aliyuncs.com:3306" user="shouji2" password="shouji2"/>
+		</writeHost>
+	</dataHost>	 -->
+</mycat:schema>
